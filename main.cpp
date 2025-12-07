@@ -1,17 +1,11 @@
 #include <cstdint>
-#include <opencv2/opencv.hpp> 
 #include <fstream>
+#include <vector>
 #include <iostream>
 #include <sys/types.h>
 using namespace std;
 
 int main() {
-
-  // cv::Mat image =cv::imread("/home/ujjwal/Downloads/images/shep.jpeg");
-  //   if(image.empty()){
-  //   cerr << "error couldnt open the image"<<endl;
-  //
-  // }
 
   string base64_output;
 const char* base64_chars =
@@ -28,10 +22,6 @@ const char* base64_chars =
     file_vec.read((char*)image_data.data(), file_size);
     cout<<"file size"<< file_size<<endl;
     cout << "Image data read..."<<filename<<endl;
-// for (unsigned char byte : image_data) {
-//     cout << hex << setw(2) << setfill('0') << (int)byte << " ";
-// }
-//
 for (size_t i = 0; i < image_data.size(); i += 3) {
     bool has_b2 = (i + 1 < image_data.size());
     bool has_b3 = (i + 2 < image_data.size());
@@ -67,21 +57,4 @@ for (size_t i = 0; i < image_data.size(); i += 3) {
     outputfile.open("output.txt");
   outputfile << base64_output<<endl;
   outputfile.close();
-  // cout<<base64_output<<endl;
-
-
-  // cv::imshow("image",image);
-  // for (int i=0 ;i<image.rows; ++i) {
-  //   for(int j=0;j<image.cols;++j){
-  //     u_char pixel_values=image.at<u_char>(i,j);
-  //   }
-  //
-  // }
-  // cv::Mat binary_image;
-  //   double threshold_value = 100; 
-  //   double max_value = 255;      
-  //   cv::threshold(image, binary_image, threshold_value, max_value, cv::THRESH_BINARY);
-  // cv::imshow("binary_image",binary_image);
-  // cv::waitKey(0);
-  // cv::destroyAllWindows();
 }
