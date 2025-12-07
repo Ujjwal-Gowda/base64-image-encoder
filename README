@@ -1,0 +1,16 @@
+#A Base64 Image Encoder
+
+A simple C++ base64 image encoder . It takes an image path and encodes it to base64  and saves the output to a output file.
+
+![Made with C++](https://img.shields.io/badge/C++-17-blue)
+
+##how to run 
+
+- clone the repo using git clone https://github.com/Ujjwal-Gowda/base64-image-encoder.git
+- or else copy the contents of main.cpp manually 
+- run the program using , g++ main.cpp -o main
+- then a executable file named main is created run it using ./main command
+- enter the path to the desired image (some samples are provided in the repo itself) ex:/home/yourPcname/cplus/sampleImages/sheep.jepg
+- a new text file named output.txt is created copy the base 64 code 
+- you can test it by pasting the code into the browser but precede it with data:image/jpeg;base64,THE CODE COMES HERE
+- you can run it without any changes just by pasting the code to an online decoder
