@@ -6,13 +6,15 @@
 using namespace std;
 
 int main() {
-
+  string path;
   string base64_output;
 const char* base64_chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"
     "0123456789+/";
-  const string filename="/home/ujjwal/Downloads/images/shep.jpeg";
+  cout<<"enter the path to the image"<<endl;
+  cin>>path;
+  const string filename=path;
  ifstream file_vec(filename,ios::in | ios::binary);
   if(file_vec.is_open()){
     file_vec.seekg(0, ios::end);
@@ -53,7 +55,8 @@ for (size_t i = 0; i < image_data.size(); i += 3) {
   cout<<"failed to open the file"<<filename<<endl;
   }
   ofstream outputfile;
-
+  cout<<"include the below header to the base64 code to test it in browser"<<endl;
+  cout<<"data:image/jpeg;base64,THE CODE COMES HERE"<<endl;
     outputfile.open("output.txt");
   outputfile << base64_output<<endl;
   outputfile.close();
